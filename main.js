@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Hero Slider
+    // Hero Slider Logic
     const slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
-    const slideInterval = 5000; // 5 seconds per clip
+    const slideDuration = 6000; // 6 seconds for a cinematic feel
 
     function nextSlide() {
         slides[currentSlide].classList.remove('active');
@@ -11,28 +11,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (slides.length > 0) {
-        setInterval(nextSlide, slideInterval);
+        setInterval(nextSlide, slideDuration);
     }
 
-    // Scroll Reveal
-    const revealElements = document.querySelectorAll('.reveal');
+    // Menu Toggle Logic
+    const menuBtn = document.getElementById('menu-btn');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const menuLinks = document.querySelectorAll('.menu-links a');
 
-    const revealOnScroll = () => {
-        const triggerBottom = window.innerHeight * 0.85;
+    menuBtn.addEventListener('click', () => {
+        const isOpen = menuOverlay.classList.toggle('active');
+        menuBtn.textContent = isOpen ? 'Close' : 'Menu';
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
 
-        revealElements.forEach(el => {
-            const elTop = el.getBoundingClientRect().top;
-
-            if (elTop < triggerBottom) {
-                el.classList.add('active');
-            }
+    // Close menu on link click
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuOverlay.classList.remove('active');
+            menuBtn.textContent = 'Menu';
+            document.body.style.overflow = '';
         });
+    });
+
+    // Scroll Reveal Intersection Observer
+    const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
     };
 
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Initial check
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
 
-    // Smooth scroll for nav links (if any)
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -43,14 +64,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    });
-
-    // Navigation Pill Logic (Simple toggle for now or just log)
-    const navTrigger = document.querySelector('.nav-trigger');
-    navTrigger.addEventListener('click', () => {
-        // In a real app, this would open a full-screen menu
-        // For this demo, let's just show a simple alert or console log
-        console.log('Menu opened');
-        navTrigger.textContent = navTrigger.textContent === 'Menu' ? 'Close' : 'Menu';
     });
 });
