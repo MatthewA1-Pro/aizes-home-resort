@@ -1,21 +1,23 @@
 :root {
     /* USER COLOR PALETTE: Earthy, natural, restrained luxury */
-    --bg-primary: #FAF9F6;
-    /* Rare Linen White */
-    --bg-secondary: #F2F1ED;
-    /* Warm Stone Neutral */
-    --bg-dark: #000000;
-    /* Pure Black depth */
+    --bg-primary: #FCFAF7;
+    /* Champagne White */
+    --bg-secondary: #F4F2EC;
+    /* Warm Ivory */
+    --bg-accent: #EAE5D8;
+    /* Antique Stone */
+    --bg-dark: #070707;
+    /* Midnight Depth */
 
-    --text-primary: #1A1918;
-    /* Deep Obsidian */
-    --text-secondary: #706C68;
-    /* Earthy Taupe */
+    --text-primary: #1A1814;
+    /* Charcoal Umber */
+    --text-secondary: #7C766D;
+    /* Earthy Clay */
     --text-on-dark: #FFFFFF;
 
-    --accent: #A69B8D;
-    /* Raw Linen / Sandstone */
-    --border: rgba(0, 0, 0, 0.08);
+    --accent: #B09B7A;
+    /* Burnished Gold */
+    --border: rgba(176, 155, 122, 0.15);
 
     --font-serif: 'Cormorant Garamond', serif;
     --font-sans: 'Inter', sans-serif;
@@ -97,44 +99,107 @@ body {
 /* Header: Logo Center Top */
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 20px;
+    /* Floating effect */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    /* Responsive width */
+    max-width: 1400px;
     z-index: 1000;
-    padding: 30px 0;
-    /* Reduced from 46px to feel more integrated */
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), background 0.8s ease;
+    padding: 20px 40px;
+    background: rgba(252, 250, 247, 0.05);
+    backdrop-filter: blur(0px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 12px;
+}
+
+.header.scrolled {
+    background: rgba(252, 250, 247, 0.85);
+    /* Proper Glass */
+    backdrop-filter: blur(25px);
+    padding: 14px 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(176, 155, 122, 0.2);
+    top: 10px;
 }
 
 .header.hide {
     transform: translateY(-100%);
 }
 
-.header.scrolled {
-    background: rgba(250, 249, 246, 0.95);
-    backdrop-filter: blur(20px);
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
-}
-
 .header-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    /* Traditional clean layout */
     align-items: center;
     width: 100%;
 }
 
 .logo {
-    height: 50px;
-    /* Even larger for better brand presence */
+    height: 32px;
+    /* Smaller, more discreet luxury height */
     transition: var(--transition-mid);
     filter: brightness(0) invert(1);
-    display: block;
 }
 
 .header.scrolled .logo {
-    filter: brightness(0);
-    /* Swaps to dark on white scroll background */
+    filter: brightness(0.1);
+    /* Soft Dark for the ivory glass */
+}
+
+/* New Header Elements */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--text-on-dark);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-weight: 500;
+    transition: color 0.4s ease;
+}
+
+.header.scrolled .nav-list a {
+    color: var(--text-primary);
+}
+
+.nav-list a:hover {
+    color: var(--accent);
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: var(--text-on-dark);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 10px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+.header.scrolled .nav-btn {
+    color: var(--text-primary);
+    border-color: var(--accent);
+}
+
+.nav-btn:hover {
+    background: var(--accent);
+    color: white !important;
+}
+
+@media (max-width: 992px) {
+    .header-nav {
+        display: none;
+        /* Keep it clean on mobile for now */
+    }
 }
 
 /* Hero Section: FS Pattern */
@@ -242,8 +307,7 @@ body {
 }
 
 .bg-accent {
-    background-color: #D6CEC3;
-    /* Rich Sand / Earth tone */
+    background-color: var(--bg-accent);
     color: var(--text-primary);
 }
 

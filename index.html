@@ -19,9 +19,20 @@
     <header id="main-header" class="header">
         <div class="header-container">
             <a href="#" class="logo-link">
-                <!-- Swaps brightness based on scroll via CSS -->
-                <img src="assets/branding/logos/raizes-logo-white.svg" alt="RAÍZES" class="logo">
+                <!-- Toggle between white and primary logo via filter/src in CSS/JS -->
+                <img src="assets/branding/logos/raizes-logo-white.svg"
+                    data-primary="assets/branding/logos/raizes-logo-primary.svg" alt="RAÍZES" class="logo">
             </a>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li><a href="#about">Concept</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#nature">Nature</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="#contact" class="nav-btn">Inquiry</a>
+            </div>
         </div>
     </header>
 
@@ -106,12 +117,12 @@
             <div class="container section-padding">
                 <div class="mosaic-grid">
                     <div class="img-container img-portrait reveal">
-                        <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80"
-                            alt="Yacht Arrival">
+                        <img src="https://images.unsplash.com/photo-1605281317010-fe5079a42ede?auto=format&fit=crop&w=800&q=80"
+                            alt="Yacht Luxury">
                     </div>
                     <div class="img-container img-landscape reveal">
-                        <img src="https://images.unsplash.com/photo-1544433330-948a3683a45c?auto=format&fit=crop&w=1200&q=80"
-                            alt="Horizon View">
+                        <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=80"
+                            alt="Superyacht Exterior">
                         <div class="moment-content">
                             <div class="moment-text">
                                 <span class="section-label">Atmosphere</span>
