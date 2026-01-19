@@ -449,9 +449,32 @@ body {
 }
 
 /* Fix for any stray vertical borders or disordered alignments */
+/* Transitional Section Styling */
 .nature-hero {
-    border: none;
-    outline: none;
+    height: 70vh;
+    width: 100%;
+    position: relative;
+    background-image: url("https://images.unsplash.com/photo-1544433330-948a3683a45c?auto=format&fit=crop&w=1920&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.nature-hero .overlay-text {
+    font-size: clamp(3rem, 10vw, 8rem);
+    color: var(--text-on-dark);
+    letter-spacing: 0.5em;
+    opacity: 0.4;
+    font-weight: 300;
+}
+
+.horizon-transition .img-container {
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Grid Fixes */
