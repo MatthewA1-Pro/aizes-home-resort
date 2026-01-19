@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { type: 'video', src: 'https://player.vimeo.com/progressive_redirect/playback/1113368060/rendition/720p/file.mp4?loc=external&signature=3f22f1965431fcdef160d3a8648c0f168b8f7e4bb8b873b5cf6a1f4a276c23a0' },
         { type: 'video', src: 'https://player.vimeo.com/progressive_redirect/playback/1138311245/rendition/1080p/file.mp4?loc=external&signature=b5989579550b6c606f68146108f6c1e1a92c10653abcbe4b96e4b7dfa2840d7c' },
         { type: 'image', src: 'https://images.ctfassets.net/7dmljk7vvc0n/6Gyf8mxbbShaB9mXBxfePE/b85b58fec46f49fdc168b443d8cc43d8/FSY_Agios-Nikolaos_-Crete_shutterstock_392020450.jpg' },
-        { type: 'image', src: 'assets/images/architecture.png' }
+        { type: 'image', src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80' }
     ];
 
     let currentIdx = 0;
