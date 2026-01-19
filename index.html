@@ -2,128 +2,152 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RAÍZES | Home Resort – Rooted in Essence</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAÍZES Home Resort | Ultra-Luxury Living</title>
     <meta name="description"
-        content="Experience RAÍZES Home Resort. A sanctuary of architecture and nature. A refined home resort experience." />
-    <link rel="stylesheet" href="/style.css" />
+        content="Experience the pinnacle of architecture and nature at RAÍZES Home Resort. A sanctuary of calm, timeless design and restrained luxury.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <!-- Floating Navigation Trigger -->
-    <button class="nav-trigger" id="menu-btn">Menu</button>
-
-    <!-- Menu Overlay -->
-    <nav id="menu-overlay">
-        <ul class="menu-links">
-            <li><a href="#hero">Entrance</a></li>
-            <li><a href="#experiences">Atmosphere</a></li>
-            <li><a href="#architecture">Architecture</a></li>
-            <li><a href="#nature">The Sanctuary</a></li>
-            <li><a href="#contact">Inquiry</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <header id="heroSection">
-        <section id="hero">
-            <div class="hero-video-container" id="hero-slider">
-                <div class="hero-slide active" style="background-image: url('/hero.png')"></div>
-                <div class="hero-slide" style="background-image: url('/interior.png')"></div>
-                <div class="hero-slide" style="background-image: url('/pool.png')"></div>
-                <div class="hero-slide" style="background-image: url('/detail.png')"></div>
-                <div class="hero-slide" style="background-image: url('/misty_garden.png')"></div>
-            </div>
-            <div class="hero-content">
-                <h1 class="hero-title">Rooted in <span class="italic">Essence</span></h1>
-            </div>
-        </section>
+    <header id="main-header" class="header">
+        <div class="header-container">
+            <a href="#" class="logo-link">
+                <img src="assets/branding/logos/raizes-logo-white.svg" alt="RAÍZES Home Resort" id="header-logo"
+                    class="logo">
+            </a>
+        </div>
     </header>
 
     <main>
-        <!-- Atmosphere -->
-        <section id="experiences" class="section container">
-            <h2 class="reveal">Atmosphere</h2>
-            <div class="grid cards-grid reveal">
-                <article class="card">
-                    <div class="card-image"><img src="/interior.png" alt="Living at RAÍZES" /></div>
-                    <h3>Living Breath</h3>
-                    <p>Spaces designed to inhale the forest, with minimalist interiors that honor raw textures and
-                        silent luxury.</p>
-                </article>
-                <article class="card">
-                    <div class="card-image"><img src="/pool.png" alt="Infinity Pool" /></div>
-                    <h3>Liquid Silence</h3>
-                    <p>An infinity reflection of the canopy, where water and sky meet in perfect, unmoving stillness.
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="video-container" id="hero-video-container">
+                <div class="video-overlay"></div>
+                <div class="hero-content">
+                    <img src="assets/branding/logos/raizes-logo-white.svg" alt="RAÍZES" class="hero-logo-large fade-in">
+                    <h1 class="hero-title fade-in-up">ARCHITECTURE & NATURE<br>IN HARMONY</h1>
+                    <div class="hero-cta fade-in">
+                        <a href="#about" class="btn-discover">Discover The Roots</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Menu -->
+            <div class="hero-floating-nav">
+                <a href="#about" class="menu-pill">MENU</a>
+            </div>
+
+            <div class="scroll-indicator">
+                <span class="line"></span>
+            </div>
+        </section>
+
+        <!-- Brand Introduction -->
+        <section class="brand-intro section-padding" id="about">
+            <div class="container container-narrow">
+                <h2 class="section-tag serif">The Essence</h2>
+                <p class="intro-text">RAÍZES is more than a residence; it is a return to origins. Situated at the
+                    intersection of avant-garde architecture and the raw power of nature, it offers a sanctuary for
+                    those who seek silence over noise, and substance over display.</p>
+            </div>
+        </section>
+
+        <!-- Architecture & Design -->
+        <section class="architecture section-padding" id="architecture">
+            <div class="container grid-2">
+                <div class="content">
+                    <h2 class="serif">The Social Architecture of Escape</h2>
+                    <p>Every line is intentional. Every material is sourced from the earth. RAÍZES combines brutalist
+                        honesty with organic warmth, creating spaces that feel as if they grew from the ground itself.
                     </p>
-                </article>
-                <article class="card">
-                    <div class="card-image"><img src="/misty_garden.png" alt="Garden Walkway" /></div>
-                    <h3>Misty Trails</h3>
-                    <p>Private paths through ancient flora, illuminated by the soft, ethereal glow of jungle dusk.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Architecture -->
-        <section id="architecture" class="section">
-            <div class="container grid editorial-grid">
-                <div class="editorial-text reveal">
-                    <h2>Architecture</h2>
-                    <h3>Design that <span class="italic">Disappears</span></h3>
-                    <p>RAÍZES is not built upon the land; it is woven through it. Using sustainably sourced weather-worn
-                        wood and volcanic stone, the structures merge with the shadows of the jungle.</p>
                 </div>
-                <div class="editorial-image reveal">
-                    <img src="/detail.png" alt="Architectural Detail" />
+                <div class="image-reveal">
+                    <img src="assets/images/architecture.png" alt="Modern Architecture" class="parallax-img">
                 </div>
             </div>
         </section>
 
-        <!-- Nature -->
-        <section id="nature" class="section">
-            <div class="container grid editorial-grid reverse">
-                <div class="editorial-image reveal">
-                    <img src="/hero.png" alt="RAÍZES Resort Overview" />
+        <!-- Nature & Surroundings -->
+        <section class="nature section-padding" id="nature">
+            <div class="container">
+                <div class="nature-hero">
+                    <div class="overlay-text serif">Immersed in Green</div>
                 </div>
-                <div class="editorial-text reveal">
-                    <h2>The Sanctuary</h2>
-                    <h3>The <span class="italic">Birthplace of Life</span></h3>
-                    <p>Surround yourself with 500 acres of protected rainforest. Here, the only rhythm is the breath of
-                        the wind and the symphony of the forest floor. A home resort that protects.</p>
+                <div class="nature-details grid-2">
+                    <p>Surrounded by primary forest, the resort is a living organism. The boundaries between indoor and
+                        outdoor are blurred, allowing the atmosphere of the surroundings to dictate the rhythm of life.
+                    </p>
+                    <div class="nature-stats">
+                        <div class="stat-item">
+                            <span class="number">100%</span>
+                            <span class="label">Natural Integration</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">Private</span>
+                            <span class="label">Sanctuary</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final Vision -->
-        <section class="section container reveal" style="text-align: center;">
-            <div style="max-width: 700px; margin: 0 auto;">
-                <p style="font-size: 1.4rem; color: var(--color-dark); margin-bottom: 2rem;">"A return to what is
-                    essential. No noise, no haste. Just the profound luxury of being present."</p>
-                <h2 style="color: var(--color-accent);">RAÍZES HOME RESORT</h2>
+        <!-- Lifestyle & Moments -->
+        <section class="lifestyle section-padding" id="lifestyle">
+            <div class="container">
+                <h2 class="serif text-center">Moments of Stillness</h2>
+                <div class="lifestyle-gallery">
+                    <!-- Gallery items with subtle hover -->
+                    <div class="gallery-item large">
+                        <div class="placeholder-img" style="background-color: #E2DFD8;"></div>
+                        <span class="caption">The Infinity Horizon</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Inquiry -->
-        <section id="contact" class="section" style="background: #121210; color: #FFF; text-align: center;">
-            <div class="container reveal">
-                <h2 style="color: var(--color-accent); margin-bottom: 1rem;">Begin Your Inquiry</h2>
-                <p style="color: #888; margin-bottom: 3rem;">For private viewings and architectural portfolios.</p>
-                <a href="mailto:inquire@raizesresort.com"
-                    style="text-decoration: none; border-bottom: 1px solid var(--color-accent); color: var(--color-accent); padding-bottom: 5px; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem;">Contact
-                    Concierge</a>
+        <!-- Inquiry Section -->
+        <section class="contact section-padding" id="contact">
+            <div class="container container-narrow text-center">
+                <img src="assets/branding/logos/raizes-symbol.svg" alt="R" class="footer-symbol">
+                <h2 class="serif">Begin the Journey</h2>
+                <p>For private inquiries regarding the RAÍZES experience, please reach out to our concierge.</p>
+                <a href="mailto:concierge@raizeshomeresort.com" class="btn-primary">Connect with us</a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p style="font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #AAA;">&copy; 2026 RAÍZES
-            Home Resort. All Rights Reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/branding/logos/raizes-logo-white.svg" alt="RAÍZES" class="footer-logo">
+                    <p>A Sanctuarium of Restrained Luxury.</p>
+                </div>
+                <div class="footer-links">
+                    <nav>
+                        <ul>
+                            <li><a href="#architecture">Design</a></li>
+                            <li><a href="#nature">Sustainability</a></li>
+                            <li><a href="#contact">Inquiry</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RAÍZES Home Resort. All rights reserved.</p>
+                <p>Property for private residential use only.</p>
+            </div>
+        </div>
     </footer>
 
-    <script type="module" src="/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
