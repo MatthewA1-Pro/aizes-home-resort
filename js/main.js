@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Hero Video Rotation - Using FS Cinematic Assets
     const heroContainer = document.getElementById('hero-video-container');
     const heroContents = [
-        { type: 'video', src: 'https://player.vimeo.com/progressive_redirect/playback/1154320895/rendition/720p/file.mp4?loc=external&signature=daace9efbddb4142ff05f5a6d5e95e244fbc051dd2e54c314f8d4eb4fa7d879a' },
+        { type: 'video', src: 'https://player.vimeo.com/progressive_redirect/playback/1154320895/rendition/1080p/file.mp4?loc=external&signature=b5989579550b6c606f68146108f6c1e1a92c10653abcbe4b96e4b7dfa2840d7c' },
         { type: 'video', src: 'https://player.vimeo.com/progressive_redirect/playback/1113368060/rendition/720p/file.mp4?loc=external&signature=3f22f1965431fcdef160d3a8648c0f168b8f7e4bb8b873b5cf6a1f4a276c23a0' },
-        { type: 'video', src: 'https://player.vimeo.com/progressive_redirect/playback/1138311245/rendition/1080p/file.mp4?loc=external&signature=b5989579550b6c606f68146108f6c1e1a92c10653abcbe4b96e4b7dfa2840d7c' },
-        { type: 'image', src: 'https://images.ctfassets.net/7dmljk7vvc0n/6Gyf8mxbbShaB9mXBxfePE/b85b58fec46f49fdc168b443d8cc43d8/FSY_Agios-Nikolaos_-Crete_shutterstock_392020450.jpg' },
-        { type: 'image', src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80' }
+        { type: 'video', src: 'https://player.vimeo.com/progressive_redirect/playback/1126421010/rendition/1080p/file.mp4?loc=external&signature=04285e82b7f0eeb9e5e6e3c54d1d8b1e4c0d16854b8d7e4b96e4b7dfa2840d7c' }, /* Yacht Deck Relax */
+        { type: 'image', src: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1920&q=80' }, /* Superyacht Exterior */
+        { type: 'image', src: 'https://images.unsplash.com/photo-1544433330-948a3683a45c?auto=format&fit=crop&w=1920&q=80' }  /* Yacht Horizon */
     ];
 
     let currentIdx = 0;
