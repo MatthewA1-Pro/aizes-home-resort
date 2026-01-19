@@ -40,14 +40,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Rotate every 4 seconds (as requested 3-5s)
     setInterval(rotateHero, 4000);
 
-    // 2. Header Scroll Effect
+    // 2. Smart Header Logic (Hide on scroll down, show on up)
     const header = document.getElementById('main-header');
+    let lastScrollY = window.scrollY;
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        const currentScrollY = window.scrollY;
+
+        // Scrolled background state
+        if (currentScrollY > 100) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
+
+        // Hide/Show logic
+        if (currentScrollY > lastScrollY && currentScrollY > 200) {
+            header.classList.add('hide'); // Scrolling down
+        } else {
+            header.classList.remove('hide'); // Scrolling up
+        }
+
+        lastScrollY = currentScrollY;
     });
 
     // 3. Intersection Observer for Scroll Animations
