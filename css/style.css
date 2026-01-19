@@ -51,6 +51,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    /* Subtle luxury texture */
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
 }
 
 .container {
@@ -227,7 +229,16 @@ body {
 
 /* Sections */
 .section-padding {
-    padding: var(--spacing-section) 0;
+    padding: 140px 0;
+    /* Slightly tighter for better flow */
+}
+
+.bg-stone {
+    background-color: var(--bg-secondary);
+}
+
+.bg-linen {
+    background-color: var(--bg-primary);
 }
 
 .intro-text {
