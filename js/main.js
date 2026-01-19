@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Intersection Observer for Scroll Animations
     const observerOptions = {
-        threshold: 0.05, // Reveal sooner (was 0.1)
-        rootMargin: '0px 0px -10% 0px' // Trigger when 10% from bottom of viewport
+        threshold: 0.1,
+        rootMargin: '0px 0px -5% 0px'
     };
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -78,10 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Apply reveal class to relevant sections
-    const animateElements = document.querySelectorAll('.section-padding, .container-narrow, .grid-2, .lifestyle-gallery');
+    // Target every reveal item directly for 100% reliability
+    const animateElements = document.querySelectorAll('.reveal');
     animateElements.forEach(el => {
-        el.classList.add('reveal-on-scroll');
         revealObserver.observe(el);
     });
 
