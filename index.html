@@ -16,24 +16,47 @@
 </head>
 
 <body>
-    <header id="main-header" class="header">
-        <div class="header-container">
-            <a href="#" class="logo-link">
-                <!-- Toggle between white and primary logo via filter/src in CSS/JS -->
-                <img src="assets/branding/logos/raizes-logo-white.svg"
-                    data-primary="assets/branding/logos/raizes-logo-primary.svg" alt="RAÍZES" class="logo">
-            </a>
-            <nav class="header-nav">
-                <ul class="nav-list">
-                    <li><a href="#about">Concept</a></li>
-                    <li><a href="#architecture">Architecture</a></li>
-                    <li><a href="#nature">Nature</a></li>
-                </ul>
-            </nav>
-            <div class="header-cta">
+    <div class="header-container">
+        <nav class="header-nav">
+            <ul class="nav-list">
+                <li><a href="#about">Concept</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#nature">Nature</a></li>
+            </ul>
+        </nav>
+
+        <a href="#" class="logo-link">
+            <img src="assets/branding/logos/raizes-logo-white.svg"
+                data-primary="assets/branding/logos/raizes-logo-primary.svg" alt="RAÍZES" class="logo">
+        </a>
+
+        <div class="header-right">
+            <div class="header-cta pc-only">
                 <a href="#contact" class="nav-btn">Inquiry</a>
             </div>
+            <!-- Burger Icon -->
+            <button id="menu-toggle" class="burger-menu" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+            </button>
         </div>
+    </div>
+
+    <!-- Fullscreen Mobile Menu -->
+    <div id="mobile-menu" class="mobile-overlay">
+        <div class="mobile-overlay-content">
+            <ul class="mobile-nav-list">
+                <li><a href="#about" class="mobile-nav-link">The Concept</a></li>
+                <li><a href="#architecture" class="mobile-nav-link">Architecture</a></li>
+                <li><a href="#nature" class="mobile-nav-link">Living Marine</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Private Inquiry</a></li>
+            </ul>
+            <div class="mobile-footer">
+                <span class="section-label">Raízes Home Resort</span>
+                <p>Established MMXXVI</p>
+            </div>
+        </div>
+    </div>
     </header>
 
     <main>
