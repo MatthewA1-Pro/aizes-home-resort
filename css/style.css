@@ -17,16 +17,19 @@
 
     --accent: #B09B7A;
     /* Burnished Gold */
+    --accent-light: #D4C4A8;
+    /* Soft Sand */
     --border: rgba(176, 155, 122, 0.15);
+    --border-light: rgba(176, 155, 122, 0.08);
 
     --font-serif: 'Cormorant Garamond', serif;
     --font-sans: 'Inter', sans-serif;
 
-    --transition-slow: 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-slow: 2s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-mid: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
-    --spacing-section: 200px;
-    /* Precise luxury breathing room */
+    --spacing-section: 180px;
 }
 
 @media (max-width: 768px) {
@@ -99,70 +102,68 @@ body {
 /* Header: Logo Center Top */
 .header {
     position: fixed;
-    top: 20px;
-    /* Floating effect */
+    top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    width: 95%;
-    /* Responsive width */
-    max-width: 1400px;
+    width: 92%;
+    max-width: 1600px;
     z-index: 1000;
-    padding: 20px 40px;
-    background: rgba(252, 250, 247, 0.05);
-    backdrop-filter: blur(0px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    border-radius: 12px;
+    padding: 16px 40px;
+    background: transparent;
+    transition: all 0.8s var(--transition-mid);
+    border-radius: 100px;
+    /* Capsule feel */
 }
 
 .header.scrolled {
-    background: rgba(252, 250, 247, 0.85);
-    /* Proper Glass */
-    backdrop-filter: blur(25px);
-    padding: 14px 40px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(176, 155, 122, 0.2);
-    top: 10px;
+    background: rgba(252, 250, 247, 0.75);
+    backdrop-filter: blur(20px) saturate(180%);
+    top: 20px;
+    padding: 12px 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
 }
 
 .header.hide {
-    transform: translateY(-100%);
+    transform: translate(-50%, -150%);
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    /* Traditional clean layout */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* True center logo */
     align-items: center;
     width: 100%;
 }
 
 .logo {
-    height: 32px;
-    /* Smaller, more discreet luxury height */
+    height: 28px;
     transition: var(--transition-mid);
     filter: brightness(0) invert(1);
+    justify-self: center;
 }
 
 .header.scrolled .logo {
     filter: brightness(0.1);
-    /* Soft Dark for the ivory glass */
 }
 
-/* New Header Elements */
+/* Navigation Spline */
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 30px;
+    justify-self: start;
 }
 
 .nav-list a {
     text-decoration: none;
     color: var(--text-on-dark);
-    font-size: 10px;
+    font-size: 9px;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.4em;
     font-weight: 500;
-    transition: color 0.4s ease;
+    transition: all 0.4s ease;
+    opacity: 0.8;
 }
 
 .header.scrolled .nav-list a {
@@ -171,17 +172,22 @@ body {
 
 .nav-list a:hover {
     color: var(--accent);
+    opacity: 1;
+}
+
+.header-cta {
+    justify-self: end;
 }
 
 .nav-btn {
     text-decoration: none;
     color: var(--text-on-dark);
-    font-size: 10px;
+    font-size: 9px;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     padding: 10px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
     transition: all 0.4s ease;
 }
 
@@ -193,6 +199,7 @@ body {
 .nav-btn:hover {
     background: var(--accent);
     color: white !important;
+    border-color: var(--accent);
 }
 
 @media (max-width: 992px) {
@@ -252,20 +259,19 @@ body {
     z-index: 10;
     text-align: center;
     color: var(--text-on-dark);
-    padding-top: 120px;
-    /* Crucial clearance for the floating header */
+    padding-top: 80px;
 }
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
     font-weight: 300;
-    letter-spacing: 0.12em;
-    /* Added breathing room */
+    letter-spacing: -0.01em;
     text-transform: uppercase;
-    line-height: 1.2;
-    /* Better separation */
-    max-width: 900px;
+    line-height: 0.95;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .hero-floating-nav {
@@ -325,20 +331,35 @@ body {
     margin: 0 auto;
 }
 
-/* Mosaic / Proportions Layout */
+/* Mosaic Editorial Grid */
 .mosaic-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Equal split feels more organized */
-    gap: 60px;
-    /* Reduced gap from 100px */
+    gap: 8vw;
     align-items: center;
+}
+
+.mosaic-grid .content {
+    background: var(--bg-linen);
+    padding: 100px 80px;
+    position: relative;
+    z-index: 5;
+    margin-left: -12vw;
+    /* Deep overlap */
+    margin-top: 15vh;
+    box-shadow: 40px 40px 120px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-light);
+}
+
+.bg-stone .mosaic-grid .content {
+    background: var(--bg-secondary);
 }
 
 .img-container {
     overflow: hidden;
     position: relative;
     background-color: var(--bg-secondary);
+    border: 1px solid var(--border-light);
 }
 
 .img-container img {
@@ -439,13 +460,29 @@ body {
 /* Robust Reveal logic */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(40px);
+    transition: opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.hero-content {
+    animation: heroReveal 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 /* Fix for any stray vertical borders or disordered alignments */
